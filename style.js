@@ -83,7 +83,7 @@
     const update = () => {
       const s = booking.querySelector("input[name=svc]:checked"), d = daysBox.querySelector("input:checked"), t = timesBox.querySelector("input:checked");
       const price = s && s.dataset.price ? " (" + (s.dataset.from ? "от " : "") + rub(+s.dataset.price) + ")" : "";
-      setMessage(booking.dataset.message.replace("{услуга}", s ? s.dataset.name + price : "").replace("{день}", d ? d.dataset.full : "").replace("{время}", t ? t.value : "время уточню"));
+      setMessage(booking.dataset.message.replace("{услуга}", s ? s.dataset.name + price : "").replace("{день}", d ? d.dataset.full : "").replace("{время}", t ? t.value : "удобное время"));
     };
     daysBox.addEventListener("change", () => { drawTimes(); update(); });
     booking.addEventListener("change", update);
